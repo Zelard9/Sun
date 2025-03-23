@@ -1,0 +1,197 @@
+@font-face {
+  font-family: 'Rowdies';
+  src: url('./../fonts/Rowdies-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+header {
+  background-color: #D5CFBE;
+  padding: 10px 0;
+  position: relative;
+  border-bottom: 2px;
+  border-style: solid;
+  border-color: black;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.brand-name {
+  font-family: 'Rowdies', sans-serif;
+  font-size: 18px;
+}
+
+#menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: left;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+#menu li {
+  display: flex;
+  align-items: center;
+}
+
+#menu a {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+#menu a {
+  color: black;
+  display: flex;
+  align-items: left;
+}
+
+#large-menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: left;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+#large-menu li {
+  display: flex;
+  align-items: center;
+}
+
+#large-menu a {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+#large-menu a {
+  color: #7F8379;
+  display: flex;
+  align-items: left;
+  gap: 5px;
+}
+
+.burger-logo-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-icon {
+  display: flex;
+  font-size: 36px;
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.add-car {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cabinet-container {
+  border: 2px solid #7F8379;
+  font-family: 'Rowdies', sans-serif;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
+.large-only {
+  display: none;
+}
+
+.medium-only {
+  display: none;
+}
+
+@keyframes menuFadeIn {
+  from {
+      max-height: 0;
+      opacity: 0;
+  }
+  to {
+      max-height: 500px; /* достатньо велике значення для показу всіх пунктів меню */
+      opacity: 1;
+  }
+}
+
+@keyframes menuFadeOut {
+    from {
+        max-height: 500px;
+        opacity: 1;
+    }
+    to {
+        max-height: 0;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 767px) {
+  .menu-icon {
+    display: block;
+  }
+
+  #menu.show {
+      animation: menuFadeIn 1s forwards;
+  }
+
+  #menu.hide {
+      animation: menuFadeOut 1s forwards;
+  }
+
+  .medium-only {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-icon {
+    display: none;
+  }
+
+  #large-menu {
+    display: flex;
+    max-height: none;
+    opacity: 1;
+    flex-direction: row;
+  }
+
+  .large-only {
+    display: flex;
+  }
+}

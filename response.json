@@ -1,0 +1,439 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "car": "1-кімнатна квартира",
+      "type": "вул. Прикладна, 10",
+      "price": 30000,
+      "img": "https://market-images.lunstatic.net/lun-ua/720/720/images/1061068956.webp",
+      "images": [
+        "https://market-images.lunstatic.net/lun-ua/720/720/images/1061068956.webp"
+      ],
+      "rooms": 1,
+      "area": 160,
+      "floor": 9,
+      "condition": "Євроремонт",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 2,
+      "car": "2-кімнатна квартира",
+      "type": "вул. Прикладна, 11",
+      "price": 12000,
+      "img": "https://market-images.lunstatic.net/lun-ua/720/720/images/1061068956.webp",
+      "images": [
+        "https://market-images.lunstatic.net/lun-ua/720/720/images/1061068956.webp"
+      ],
+      "rooms": 5,
+      "area": 30,
+      "floor": 9,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 3,
+      "car": "3-кімнатна квартира",
+      "type": "вул. Прикладна, 12",
+      "price": 40000,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg"
+      ],
+      "rooms": 1,
+      "area": 30,
+      "floor": 12,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Оренда"
+    },
+    {
+      "id": 4,
+      "car": "Будинок",
+      "type": "вул. Прикладна, 13",
+      "price": 15000,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU"
+      ],
+      "rooms": 5,
+      "area": 180,
+      "floor": 7,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 5,
+      "car": "Офісне приміщення",
+      "type": "вул. Прикладна, 14",
+      "price": 20000,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg"
+      ],
+      "rooms": 1,
+      "area": 110,
+      "floor": 13,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 6,
+      "car": "Комерційне приміщення",
+      "type": "вул. Прикладна, 15",
+      "price": 25000,
+      "img": "https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320",
+      "images": [
+        "https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320"
+      ],
+      "rooms": 4,
+      "area": 50,
+      "floor": 4,
+      "condition": "Євроремонт",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 7,
+      "car": "Житловий будинок",
+      "type": "вул. Прикладна, 16",
+      "price": 9000,
+      "img": "https://media.ed.edmunds-media.com/bmw/3-series/2023/oem/2023_bmw_3-series_sedan_330i-xdrive_fq_oem_1_815.jpg",
+      "images": [
+        "https://media.ed.edmunds-media.com/bmw/3-series/2023/oem/2023_bmw_3-series_sedan_330i-xdrive_fq_oem_1_815.jpg"
+      ],
+      "rooms": 4,
+      "area": 170,
+      "floor": 13,
+      "condition": "Без ремонту",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 8,
+      "car": "Квартира-студія",
+      "type": "вул. Прикладна, 17",
+      "price": 19500,
+      "img": "https://hips.hearstapps.com/hmg-prod/images/2024-bmw-x5-m60i-102-6602d48787fb7.jpg?crop=0.772xw:0.651xh;0.0897xw,0.171xh&resize=2048:*",
+      "images": [
+        "https://hips.hearstapps.com/hmg-prod/images/2024-bmw-x5-m60i-102-6602d48787fb7.jpg?crop=0.772xw:0.651xh;0.0897xw,0.171xh&resize=2048:*"
+      ],
+      "rooms": 2,
+      "area": 70,
+      "floor": 15,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 9,
+      "car": "Апартаменти в центрі",
+      "type": "вул. Прикладна, 18",
+      "price": 45800,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/2021_Toyota_Land_Cruiser_300_3.4_ZX_%28Colombia%29_front_view_04.png/2880px-2021_Toyota_Land_Cruiser_300_3.4_ZX_%28Colombia%29_front_view_04.png",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/2021_Toyota_Land_Cruiser_300_3.4_ZX_%28Colombia%29_front_view_04.png/2880px-2021_Toyota_Land_Cruiser_300_3.4_ZX_%28Colombia%29_front_view_04.png"
+      ],
+      "rooms": 4,
+      "area": 40,
+      "floor": 3,
+      "condition": "Без ремонту",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 10,
+      "car": "Таунхаус",
+      "type": "вул. Прикладна, 19",
+      "price": 34600,
+      "img": "https://s.list.am/f/229/72623229.webp",
+      "images": [
+        "https://s.list.am/f/229/72623229.webp"
+      ],
+      "rooms": 4,
+      "area": 60,
+      "floor": 10,
+      "condition": "Євроремонт",
+      "offer_type": "Оренда"
+    },
+    {
+      "id": 11,
+      "car": "Новобудова",
+      "type": "вул. Прикладна, 20",
+      "price": 39900,
+      "img": "https://cdn.riastatic.com/photosnewr/auto/photo/toyota-land-cruiser-prado-150__316133316-460x345.webp",
+      "images": [
+        "https://cdn.riastatic.com/photosnewr/auto/photo/toyota-land-cruiser-prado-150__316133316-460x345.webp"
+      ],
+      "rooms": 5,
+      "area": 30,
+      "floor": 12,
+      "condition": "Після будівельників",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 12,
+      "car": "Оренда офісу",
+      "type": "вул. Прикладна, 21",
+      "price": 10000,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/2014_Toyota_Corolla_%28ZRE172R%29_Ascent_sedan_%282014-04-11%29.jpg/1599px-2014_Toyota_Corolla_%28ZRE172R%29_Ascent_sedan_%282014-04-11%29.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/2014_Toyota_Corolla_%28ZRE172R%29_Ascent_sedan_%282014-04-11%29.jpg/1599px-2014_Toyota_Corolla_%28ZRE172R%29_Ascent_sedan_%282014-04-11%29.jpg"
+      ],
+      "rooms": 5,
+      "area": 30,
+      "floor": 6,
+      "condition": "Без ремонту",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 13,
+      "car": "Продаж офісу",
+      "type": "вул. Прикладна, 22",
+      "price": 35000,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/c/c3/2018_Honda_CR-V_%28RW_MY18%29_%2BSport_2WD_wagon_%282018-10-22%29_01.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c3/2018_Honda_CR-V_%28RW_MY18%29_%2BSport_2WD_wagon_%282018-10-22%29_01.jpg"
+      ],
+      "rooms": 5,
+      "area": 110,
+      "floor": 4,
+      "condition": "Після будівельників",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 14,
+      "car": "Оренда квартири",
+      "type": "вул. Прикладна, 23",
+      "price": 30000,
+      "img": "https://hips.hearstapps.com/hmg-prod/images/2024-volvo-xc90-101-649311ffdc60b.jpg?crop=0.536xw:0.401xh;0.292xw,0.382xh&resize=2048:*",
+      "images": [
+        "https://hips.hearstapps.com/hmg-prod/images/2024-volvo-xc90-101-649311ffdc60b.jpg?crop=0.536xw:0.401xh;0.292xw,0.382xh&resize=2048:*"
+      ],
+      "rooms": 5,
+      "area": 120,
+      "floor": 8,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Оренда"
+    },
+    {
+      "id": 15,
+      "car": "Елітна квартира",
+      "type": "вул. Прикладна, 24",
+      "price": 25000,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Volvo_V40_D3_Summum_Designpaket_%28II%29_%E2%80%93_Frontansicht%2C_17._September_2012%2C_D%C3%BCsseldorf.jpg/2880px-Volvo_V40_D3_Summum_Designpaket_%28II%29_%E2%80%93_Frontansicht%2C_17._September_2012%2C_D%C3%BCsseldorf.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Volvo_V40_D3_Summum_Designpaket_%28II%29_%E2%80%93_Frontansicht%2C_17._September_2012%2C_D%C3%BCsseldorf.jpg/2880px-Volvo_V40_D3_Summum_Designpaket_%28II%29_%E2%80%93_Frontansicht%2C_17._September_2012%2C_D%C3%BCsseldorf.jpg"
+      ],
+      "rooms": 4,
+      "area": 200,
+      "floor": 7,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Оренда"
+    },
+    {
+      "id": 16,
+      "car": "Двокімнатна квартира",
+      "type": "вул. Прикладна, 25",
+      "price": 18000,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/VW_Tiguan_2.0_TDI_front_20100801.jpg/1600px-VW_Tiguan_2.0_TDI_front_20100801.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/VW_Tiguan_2.0_TDI_front_20100801.jpg/1600px-VW_Tiguan_2.0_TDI_front_20100801.jpg"
+      ],
+      "rooms": 4,
+      "area": 50,
+      "floor": 2,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 17,
+      "car": "Будинок з ремонтом",
+      "type": "вул. Прикладна, 26",
+      "price": 16500,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/9/91/VW_Passat_B8_Limousine_2.0_TDI_Highline.JPG",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/9/91/VW_Passat_B8_Limousine_2.0_TDI_Highline.JPG"
+      ],
+      "rooms": 2,
+      "area": 200,
+      "floor": 11,
+      "condition": "Після будівельників",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 18,
+      "car": "Оренда комерції",
+      "type": "вул. Прикладна, 27",
+      "price": 14300,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/VW_Golf_1.6_TDI_BlueMotion_Technology_Comfortline_%28VII%29_%E2%80%93_Frontansicht%2C_31._Dezember_2012%2C_D%C3%BCsseldorf.jpg/2880px-VW_Golf_1.6_TDI_BlueMotion_Technology_Comfortline_%28VII%29_%E2%80%93_Frontansicht%2C_31._Dezember_2012%2C_D%C3%BCsseldorf.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/VW_Golf_1.6_TDI_BlueMotion_Technology_Comfortline_%28VII%29_%E2%80%93_Frontansicht%2C_31._Dezember_2012%2C_D%C3%BCsseldorf.jpg/2880px-VW_Golf_1.6_TDI_BlueMotion_Technology_Comfortline_%28VII%29_%E2%80%93_Frontansicht%2C_31._Dezember_2012%2C_D%C3%BCsseldorf.jpg"
+      ],
+      "rooms": 5,
+      "area": 110,
+      "floor": 4,
+      "condition": "Без ремонту",
+      "offer_type": "Оренда"
+    },
+    {
+      "id": 19,
+      "car": "Продаж будинку",
+      "type": "вул. Прикладна, 28",
+      "price": 45200,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/b/bd/2018_Volkswagen_Touareg_V6_R-Line_TDi_Automatic_3.0_Front.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/b/bd/2018_Volkswagen_Touareg_V6_R-Line_TDi_Automatic_3.0_Front.jpg"
+      ],
+      "rooms": 1,
+      "area": 120,
+      "floor": 1,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 20,
+      "car": "Будинок у передмісті",
+      "type": "вул. Прикладна, 29",
+      "price": 38600,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Audi_RS6_Avant_C8_1X7A0305.jpg/2880px-Audi_RS6_Avant_C8_1X7A0305.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Audi_RS6_Avant_C8_1X7A0305.jpg/2880px-Audi_RS6_Avant_C8_1X7A0305.jpg"
+      ],
+      "rooms": 4,
+      "area": 180,
+      "floor": 12,
+      "condition": "Євроремонт",
+      "offer_type": "Оренда"
+    },
+    {
+      "id": 21,
+      "car": "1-кімн. студія",
+      "type": "вул. Прикладна, 30",
+      "price": 13500,
+      "img": "https://vedanta-auto.com.ua/wp-content/cache/thumb/1d/c98fa172202c81d_0x800.jpg",
+      "images": [
+        "https://vedanta-auto.com.ua/wp-content/cache/thumb/1d/c98fa172202c81d_0x800.jpg"
+      ],
+      "rooms": 2,
+      "area": 40,
+      "floor": 4,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Оренда"
+    },
+    {
+      "id": 22,
+      "car": "Офіс з меблями",
+      "type": "вул. Прикладна, 31",
+      "price": 14800,
+      "img": "https://i.infocar.ua/i/12/1902/1400x700.jpg",
+      "images": [
+        "https://i.infocar.ua/i/12/1902/1400x700.jpg"
+      ],
+      "rooms": 5,
+      "area": 200,
+      "floor": 3,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Оренда"
+    },
+    {
+      "id": 23,
+      "car": "Кімната в гуртожитку",
+      "type": "вул. Прикладна, 32",
+      "price": 14800,
+      "img": "https://www.aelita.ua/wp-content/uploads/2021/07/20210707_120935-scaled-1140x843.jpg",
+      "images": [
+        "https://www.aelita.ua/wp-content/uploads/2021/07/20210707_120935-scaled-1140x843.jpg"
+      ],
+      "rooms": 1,
+      "area": 140,
+      "floor": 10,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Оренда"
+    },
+    {
+      "id": 24,
+      "car": "Оренда під магазин",
+      "type": "вул. Прикладна, 33",
+      "price": 38000,
+      "img": "https://electro-motors.top/image/cache/catalog/electrocars/id4/vw-id4-pure-7-1200x800.jpg",
+      "images": [
+        "https://electro-motors.top/image/cache/catalog/electrocars/id4/vw-id4-pure-7-1200x800.jpg"
+      ],
+      "rooms": 4,
+      "area": 100,
+      "floor": 9,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Оренда"
+    },
+    {
+      "id": 25,
+      "car": "Торгова площа",
+      "type": "вул. Прикладна, 34",
+      "price": 27000,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/2018_Nissan_Leaf_Tekna_Front.jpg/2880px-2018_Nissan_Leaf_Tekna_Front.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/2018_Nissan_Leaf_Tekna_Front.jpg/2880px-2018_Nissan_Leaf_Tekna_Front.jpg"
+      ],
+      "rooms": 5,
+      "area": 70,
+      "floor": 5,
+      "condition": "Після будівельників",
+      "offer_type": "Оренда"
+    },
+    {
+      "id": 26,
+      "car": "Продаж приміщення",
+      "type": "вул. Прикладна, 35",
+      "price": 27000,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg/2880px-2019_Tesla_Model_3_Performance_AWD_Front.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg/2880px-2019_Tesla_Model_3_Performance_AWD_Front.jpg"
+      ],
+      "rooms": 2,
+      "area": 100,
+      "floor": 11,
+      "condition": "Без ремонту",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 27,
+      "car": "Квартира біля парку",
+      "type": "вул. Прикладна, 36",
+      "price": 32000,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Tesla_Model_X_100D_1X7A6736.jpg/2880px-Tesla_Model_X_100D_1X7A6736.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Tesla_Model_X_100D_1X7A6736.jpg/2880px-Tesla_Model_X_100D_1X7A6736.jpg"
+      ],
+      "rooms": 4,
+      "area": 140,
+      "floor": 12,
+      "condition": "Євроремонт",
+      "offer_type": "Продаж"
+    },
+    {
+      "id": 28,
+      "car": "Квартира на Південному",
+      "type": "вул. Прикладна, 37",
+      "price": 39400,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Tesla_Model_Y_1X7A6211.jpg/2880px-Tesla_Model_Y_1X7A6211.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Tesla_Model_Y_1X7A6211.jpg/2880px-Tesla_Model_Y_1X7A6211.jpg"
+      ],
+      "rooms": 4,
+      "area": 190,
+      "floor": 15,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Оренда"
+    },
+    {
+      "id": 29,
+      "car": "Лофт біля центру",
+      "type": "вул. Прикладна, 38",
+      "price": 17200,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/c/c6/2018_Renault_ZOE.jpg",
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c6/2018_Renault_ZOE.jpg"
+      ],
+      "rooms": 1,
+      "area": 180,
+      "floor": 3,
+      "condition": "Косметичний ремонт",
+      "offer_type": "Оренда"
+    }
+  ]
+}
