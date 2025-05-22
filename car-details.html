@@ -3,13 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Деталі авто</title>
-    <link rel="stylesheet" href="./styles/main.css">
+    <title>Деталі</title>
+    
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/modal.css" />
+    <link rel="stylesheet" href="./styles/car.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Детальна інформація про авто</h1>
-    </header>
+        <nav>
+          <div class="burger-logo-container">
+            <div class="menu-icon" id="menu-icon">☰</div>
+            <div class="logo-container" ><img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" href="#"/><p class="brand-name"></p></div>
+          </div>
+          <div class="large-only">
+            <ul id="large-menu">
+              <li><span class="fa fa-child"></span>&nbsp; <a href="#">About Us</a></li>
+              <li><span class="fa fa-wrench"></span>&nbsp; <a href="#">Partners</a></li>
+              <li><span class="fa fa-vcard"></span>&nbsp; <a href="#">Map</a></li>
+              <li><span class="fa fa-user-circle-o"></span>&nbsp; <a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="cabinet-container">
+            <div class="user-name" id="user"></div>
+            <button type="submit" class="car-button add-car" id="add-car-button">+ Добавити Оголошення</button>
+          </div>
+        </nav>
+        <div class="menu-items medium-only">
+          <ul id="menu">
+            <li><span class="fa fa-child"></span>&nbsp; <a href="#">About Us</a></li>
+            <li><span class="fa fa-wrench"></span>&nbsp; <a href="#">Partners</a></li>
+            <li><span class="fa fa-vcard"></span>&nbsp; <a href="#">Portfolio</a></li>
+            <li><span class="fa fa-user-circle-o"></span>&nbsp; <a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </header>
     <main>
         <div id="car-details"></div>
     </main>

@@ -1,12 +1,13 @@
 const cast = [];
 var makes = [];
 var models = [];
-var fuel_types = [];
+var conditions = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const response = await fetch('./response.json')
+  const response = await fetch('./response.json');
   const response_json = await response.json();
   cars = response_json.cars;
+
   const form = document.querySelector(".js-form");
   const welcomeForm = document.querySelector(".welcome-form");
   const container = document.querySelector(".js-list");
@@ -17,11 +18,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   container.style.display = "flex";
   container.style.flexWrap = "wrap";
   container.style.gap = "25px";
-  container.insertAdjacentHTML("beforeend", createMarkup(cars));
+  container.innerHTML = createMarkup(cars);
 
   populateSelect('makes-select', makes);
   populateSelect('models-select', models);
-  populateSelect('fuel-types-select', fuel_types);
+  populateSelect('condition-select', conditions);
 
   const menuIcon = document.getElementById('menu-icon');
   const menu = document.getElementById('menu');
@@ -31,30 +32,25 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   modal.style.display = "block";  
 
-  span.onclick = function() {
+  span.onclick = function () {
     modal.style.display = "none";
   }
 
   menuIcon.addEventListener('click', () => {
-    if (menu.classList.contains('show')) {
-      menu.classList.remove('show');
-      menu.classList.add('hide');
-    } else {
-      menu.classList.remove('hide');
-      menu.classList.add('show');
-    }
+    menu.classList.toggle('show');
+    menu.classList.toggle('hide');
   });
-})
+});
 
 function createMarkup(arr) {
-  var array_makes = [];
-  var array_models = [];
-  var array_fuel_types = [];
+  let array_makes = [];
+  let array_models = [];
+  let array_conditions = [];
 
   const list = arr.map(item => {
     array_makes.push(item.car);
     array_models.push(item.type);
-    array_fuel_types.push(item.fuel);
+    array_conditions.push(item.condition);
 
     return `
       <li class="car-card" data-id="${item.id}">
@@ -62,9 +58,13 @@ function createMarkup(arr) {
           <img src="${item.img}" alt="${item.type}" class="car-image">
           <h2 class="car-title">${item.car}</h2>
           <h3 class="car-type">${item.type}</h3>
-          <h3 class="car-mileage">${item.mileage}км</h3>
-          <h3 class="car-capacity"> Об'єм двигуна: ${item.capacity}</h3>
-          <h3 class="car-fuel">Тип палива: ${item.fuel}</h3>
+         <h3><i class="fas fa-bed"></i> Кімнат: ${item.rooms}</h3>
+         <h3><i class="fas fa-ruler-combined"></i> Площа: ${item.area} м²</h3>
+         <h3><i class="fas fa-building"></i> Поверх: ${item.floor}</h3>
+        <h3><i class="fas fa-tools"></i> Стан: ${item.condition}</h3>
+        <h3><i class="fas fa-file-contract"></i> Тип угоди: ${item.offer_type}</h3>
+
+
           <span class="car-price">${item.price}$</span>
         </a>
       </li>
@@ -73,46 +73,47 @@ function createMarkup(arr) {
 
   makes = [...new Set(array_makes)];
   models = [...new Set(array_models)];
-  fuel_types = [...new Set(array_fuel_types)];
+  conditions = [...new Set(array_conditions)];
 
   return list;
 }
-
 
 function populateSelect(selectId, options) {
   const select = document.getElementById(selectId);
   select.appendChild(new Option("-Вибір-"));
 
-  options.map(option => {
+  options.forEach(option => {
     select.appendChild(new Option(option));
   });
 }
 
 function handleSearch(event) {
   event.preventDefault();
-
   const elements = event.target.elements;
-  const make = elements.make.value == '-Місто-' ? '' : elements.make.value;
-  const model = elements.model.value == '-Район-' ? '' : elements.model.value;
-  const mileage = elements.mileage.value;
-  const engineVolume = elements.engine_volume.value;
-  const fuelType = elements.fuel.value == '-Купівля/оренда-' ? '' : elements.fuel.value ;
-  
-  const result = cars       
-                  .filter(car => {
-                    return (!make || car.car.toLowerCase().includes(make.toLowerCase())) &&
-                          (!model || car.type.toLowerCase().includes(model.toLowerCase())) &&
-                          (!mileage || car.mileage <= parseInt(mileage, 10)) &&
-                          (!engineVolume || car.capacity == parseFloat(engineVolume)) &&
-                          (!fuelType || car.fuel.toLowerCase().includes(fuelType.toLowerCase()));
-                  });
+
+  const make = elements.make.value !== '-Вибір-' ? elements.make.value : '';
+  const model = elements.model.value !== '-Вибір-' ? elements.model.value : '';
+  const maxArea = elements.area.value;
+  const maxFloor = elements.floor.value;
+  const rooms = elements.rooms.value !== '-Вибір-' ? elements.rooms.value : '';
+  const condition = elements.condition.value !== '-Вибір-' ? elements.condition.value : '';
+  const offerType = elements.offer_type.value !== '-Вибір-' ? elements.offer_type.value : '';
+
+  const result = cars.filter(car => {
+    return (!make || car.car.toLowerCase().includes(make.toLowerCase())) &&
+           (!model || car.type.toLowerCase().includes(model.toLowerCase())) &&
+           (!maxArea || car.area <= parseInt(maxArea, 10)) &&
+           (!maxFloor || car.floor <= parseInt(maxFloor, 10)) &&
+           (!rooms || (rooms === "4+" ? car.rooms >= 4 : car.rooms == rooms)) &&
+           (!condition || car.condition === condition) &&
+           (!offerType || car.offer_type === offerType);
+  });
+
   const container = document.querySelector(".js-list");
 
-  if (result.length === 0) {
-    container.innerHTML = `<div>Нічого не знайдено :(</div>`;
-  } else {
-    container.innerHTML = createMarkup(result);
-  }
+  container.innerHTML = result.length === 0
+    ? `<div>Нічого не знайдено :(</div>`
+    : createMarkup(result);
 }
 
 function handleWelcome(event) {
@@ -122,10 +123,9 @@ function handleWelcome(event) {
   let user = document.getElementById('user');
   var modal = document.getElementById("welcome-modal");
 
-  user.textContent = `Привіт, ${name}!`;
+  user.textContent = `Ви ввійшли як, ${name}`;
   modal.style.display = "none";
-}
-
-async function createCar() {
 
 }
+
+

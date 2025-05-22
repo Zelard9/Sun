@@ -1,17 +1,8 @@
-@font-face {
-  font-family: 'Rowdies';
-  src: url('./../fonts/Rowdies-Bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 header {
-  background-color: #D5CFBE;
+  background-color: #e6e6e6;
   padding: 10px 0;
   position: relative;
-  border-bottom: 2px;
-  border-style: solid;
-  border-color: black;
 }
 
 nav {
@@ -23,7 +14,21 @@ nav {
 .logo-container {
   display: flex;
   flex-direction: row;
+  font-family: 'Wawy World', sans-serif;
 }
+
+.logo-text {
+  font-family: 'Wawy World', sans-serif;
+  font-size: 40px;
+  fill: #1a171b;
+}
+
+.roof-line {
+  stroke: #FFD700;
+  stroke-width: 4;
+  fill: none;
+}
+
 
 .brand-name {
   font-family: 'Rowdies', sans-serif;
@@ -43,9 +48,11 @@ nav {
   opacity: 0;
 }
 
+
 #menu li {
   display: flex;
   align-items: center;
+  color: #000;
 }
 
 #menu a {
@@ -66,7 +73,7 @@ nav {
   list-style: none;
   padding: 0;
   display: flex;
-  gap: 20px;
+  gap: 60px;
   flex-direction: column;
   align-items: left;
   max-height: 0;
@@ -78,6 +85,7 @@ nav {
 #large-menu li {
   display: flex;
   align-items: center;
+  
 }
 
 #large-menu a {
@@ -88,12 +96,7 @@ nav {
   text-decoration: none;
 }
 
-#large-menu a {
-  color: #7F8379;
-  display: flex;
-  align-items: left;
-  gap: 5px;
-}
+
 
 .burger-logo-container {
   display: flex;
@@ -110,9 +113,11 @@ nav {
 }
 
 .add-car {
+  border: 2px solid #000;
   margin-left: auto;
   margin-right: 20px;
 }
+
 
 .menu-items {
   display: flex;
@@ -121,9 +126,7 @@ nav {
 }
 
 .cabinet-container {
-  border: 2px solid #7F8379;
-  font-family: 'Rowdies', sans-serif;
-  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 612 792">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #fed107;
+        stroke-width: 7px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        font-family: WavyWorldRegular, Wavy-World;
+        font-size: 179px;
+        letter-spacing: .11em;
+        stroke: #231f20;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.6.0, SVG Export Plug-In . SVG Version: 1.2.0 Build 709)  -->
+  <g>
+    <g id="Layer_1">
+      <text class="cls-2" transform="translate(143.59 474.1)"><tspan x="0" y="0">SUN</tspan></text>
+      <line class="cls-1" x1="242.36" y1="359.63" x2="302.05" y2="312.77"/>
+      <polyline class="cls-1" points="356.28 359.03 307.52 320.4 298.64 313.37"/>
+    </g>
+  </g>
+</svg>
