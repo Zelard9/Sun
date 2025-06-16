@@ -34,7 +34,7 @@
     {
       "id": 3,
       "car": "3-кімнатна квартира",
-      "type": "вул. Прикладна, 12",
+      "address": "вул. Прикладна, 12",
       "price": 300,
       "img": "https://market-images.lunstatic.net/lun-ua/720/720/images/1063850990.webp",
       "images": [
