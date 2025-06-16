@@ -53,7 +53,7 @@ input {
 }
 
 .car-search {
-  margin: 25px auto;
+  margin: 0 auto;
   padding: 20px;
   border: 2px solid black;
   border-radius: 5px;
@@ -119,8 +119,29 @@ input {
   width: 100%;
   height: 670px;
   position: relative;
+  overflow: hidden;
 }
 
+.sun-img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+.sun-text{
+  position: relative;
+  z-index: 2;
+  margin-left: 10px;
+  margin-top: 20px;
+  color: #000;
+  font-size: 50px;
+  font-weight:500;
+  text-align: left;
+}
 
 
 .car-list {
@@ -264,3 +285,70 @@ button:hover {
   background: #0056b3;
 }
 
+.realtors-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.realtor-container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px; 
+}
+
+.realtors-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.realtor-card {
+  width: calc(33.333% - 20px); /* точно 3 стовпці */
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.realtors-text{
+  color: #000;
+  font-size: 50px;
+  font-weight:500;
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+/* Десктоп — уже є, залишаємо як є (3 в ряд) */
+
+@media (max-width: 1024px) {
+  /* Планшети — 2 в ряд */
+  .realtor-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 767px) {
+  /* Телефони — 1 в ряд */
+  .realtor-card {
+    width: 100%;
+  }
+
+  .realtors-text {
+    font-size: 36px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .realtors-wrapper {
+    justify-content: center;
+  }
+}
