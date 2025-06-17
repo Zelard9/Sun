@@ -11,17 +11,22 @@
 <body>
     <header>
         <nav>
-            <div class="burger-logo-container">
-              <div class="menu-icon" id="menu-icon">☰</div>
-              <div class="logo-container"><img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" /><p class="brand-name"></p></div>
+          <div class="burger-logo-container">
+            <div class="menu-icon" id="menu-icon">☰</div>
+            
+            <div class="logo-container">
+              <a href="./index.html">
+                <img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" />
+              </a>
+              <p class="brand-name"></p>
             </div>
             <div class="large-only">
               <ul id="large-menu">
-                <li><a href="#">Кабінет</a></li>
-                <li><a href="realtors.html">Рієлтори</a></li>
-                <li><a href="map.html" target="_blank">Мапа</a>
+                <li><a href="./cabinet.html">Кабінет</a></li>
+                <li><a href="./realtors.html">Рієлтори</a></li>
+                <li><a href="./map.html" target="_blank">Мапа</a>
                  </li>
-                <li><a href="#">Контакти</a></li>
+                <li><a href="./contacts.html">Контакти</a></li>
               </ul>
             </div>
             <div class="cabinet-container">
@@ -43,7 +48,7 @@
             <a href="tel:+380971234567" class="car-type">+38 (097) 123 45 67</a>
           </div>
           <div class="realtor-card">
-            <img class="car-image" src="./resources/realtor-2.jpeg" alt="Рієлтор 2">
+            <img class="car-image" src="./resources/realtor-2.jpg" alt="Рієлтор 2">
             <h3 class="car-title">Олександр Петренко</h3>
             <a href="tel:+380631112233" class="car-type">+38 (063) 111 22 33</a>
           </div>
@@ -74,14 +79,19 @@
     
   </main>
 
-  <footer class="car-footer">
-    <nav>
-      <ul class="contacts-list">
-        <li><span class="fa fa-phone"></span>&nbsp; <a class="footer-links" href="tel:+380969447405">Contact</a></li>
-        <li><span class="fa fa-envelope"></span>&nbsp; <a class="footer-links" href="mailto:shostak.oleksandr@comp-sc.if.ua">Email</a></li>
-      </ul>
-    </nav>
-    <img id="logo" src="./resources/SUN.svg" width="150" height="100" />
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="logo-container">
+        <a href="./index.html">
+          <img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" />
+        </a>
+        <p class="brand-name"></p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:support@sun.com">support@sun.com</a>
+        <a href="./contacts.html">Контакти</a>
+      </div>
+    </div>
   </footer>
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

@@ -74,34 +74,33 @@
       
 </head>
 <body>
-    <header>
-        <nav>
-          <div class="burger-logo-container">
-            <div class="menu-icon" id="menu-icon">☰</div>
-            <div class="logo-container" ><img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" href="#"/><p class="brand-name"></p></div>
-          </div>
-          <div class="large-only">
-            <ul id="large-menu">
-              <li><span class="fa fa-child"></span>&nbsp; <a href="#">About Us</a></li>
-              <li><span class="fa fa-wrench"></span>&nbsp; <a href="#">Partners</a></li>
-              <li><span class="fa fa-vcard"></span>&nbsp; <a href="#">Map</a></li>
-              <li><span class="fa fa-user-circle-o"></span>&nbsp; <a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="cabinet-container">
-            <div class="user-name" id="user"></div>
-            <button type="submit" class="car-button add-car" id="add-car-button">+ Добавити Оголошення</button>
-          </div>
-        </nav>
-        <div class="menu-items medium-only">
-          <ul id="menu">
-            <li><span class="fa fa-child"></span>&nbsp; <a href="#">About Us</a></li>
-            <li><span class="fa fa-wrench"></span>&nbsp; <a href="#">Partners</a></li>
-            <li><span class="fa fa-vcard"></span>&nbsp; <a href="#">Portfolio</a></li>
-            <li><span class="fa fa-user-circle-o"></span>&nbsp; <a href="#">Contact</a></li>
+  <header>
+    <nav>
+      <div class="burger-logo-container">
+        <div class="menu-icon" id="menu-icon">☰</div>
+        
+        <div class="logo-container">
+          <a href="./index.html">
+            <img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" />
+          </a>
+          <p class="brand-name"></p>
+        </div>
+        <div class="large-only">
+          <ul id="large-menu">
+            <li><a href="./cabinet.html">Кабінет</a></li>
+            <li><a href="./realtors.html">Рієлтори</a></li>
+            <li><a href="./map.html" target="_blank">Мапа</a>
+             </li>
+            <li><a href="./contacts.html">Контакти</a></li>
           </ul>
         </div>
-      </header>
+        <div class="cabinet-container">
+          <div class="user-name" id="user"></div>
+          <button type="submit" class="car-button add-car" id="add-car-button">+ Добавити Оголошення</button>
+        </div>
+      </nav>
+   
+  </header>
     <main>
         <div id="car-details"></div>
         <section class="property-extra">
@@ -111,9 +110,10 @@
           </div>
         
           <div class="buttons-block">
-            <button class="btn contact-btn">
+            <button class="btn contact-btn" onclick="location.href='./realtors.html'">
               <i class="fa fa-envelope"></i> Зв’язатись з рієлтором
             </button>
+            
             <button class="btn favorite-btn">
               <i class="fa fa-heart"></i> Додати в обране
             </button>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Карта розташування</title>
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/navbar.css" />
+  <link rel="stylesheet" href="./styles/footer.css" />
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="burger-logo-container">
+            <div class="menu-icon" id="menu-icon">☰</div>
+            
+            <div class="logo-container">
+              <a href="./index.html">
+                <img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" />
+              </a>
+              <p class="brand-name"></p>
+            </div>
+            <div class="large-only">
+              <ul id="large-menu">
+                <li><a href="./cabinet.html">Кабінет</a></li>
+                <li><a href="./realtors.html">Рієлтори</a></li>
+                <li><a href="./map.html" target="_blank">Мапа</a>
+                 </li>
+                <li><a href="./contacts.html">Контакти</a></li>
+              </ul>
+            </div>
+            <div class="cabinet-container">
+              <div class="user-name" id="user"></div>
+              <button type="submit" class="car-button add-car" id="add-car-button">+ Добавити Оголошення</button>
+            </div>
+          </nav>
+       
+      </header>
+
+      <main>
+        <div class="profile-layout">
+          
+          <!-- Ліва колонка: профіль -->
+          <section class="user-profile">
+            <div class="user-container">
+              <h1 class="profile-title">Мій профіль</h1>
+              <div class="profile-card">
+                <div class="profile-section"><label>Ім'я користувача:</label><p id="username">...</p></div>
+                <div class="profile-section"><label>Електронна пошта:</label><p id="email">...</p></div>
+                <div class="profile-section"><label>Номер телефону:</label><p id="phone">...</p></div>
+                <div class="profile-section"><label>Тип користувача:</label><p id="typeUser">...</p></div>
+                <div class="profile-section"><label>Роль у системі:</label><p id="role">...</p></div>
+                <div class="profile-section"><label>Підтверджено:</label><p id="isVerified">...</p></div>
+              </div>
+            </div>
+          </section>
+      
+          <!-- Права колонка: улюблені -->
+          <section class="favorites-side">
+            <h2 class="favorites-title">Улюблені помешкання</h2>
+            <ul id="favorites-list" class="favorites-grid"></ul>
+          </section>
+          
+        
+        </div>
+      </main>
+      
+      
+
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="logo-container">
+            <a href="./index.html">
+              <img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" />
+            </a>
+            <p class="brand-name"></p>
+          </div>
+          <div class="footer-links">
+            <a href="mailto:support@sun.com">support@sun.com</a>
+            <a href="./contacts.html">Контакти</a>
+          </div>
+        </div>
+      </footer>
+    
+      <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+      <script src="./src/cabinet.js"></script>
+    </body>
+    </html>

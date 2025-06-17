@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Карта розташування</title>
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/navbar.css" />
+  <link rel="stylesheet" href="./styles/footer.css" />
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="burger-logo-container">
+            <div class="menu-icon" id="menu-icon">☰</div>
+            
+            <div class="logo-container">
+              <a href="./index.html">
+                <img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" />
+              </a>
+              <p class="brand-name"></p>
+            </div>
+        <div class="large-only">
+          <ul id="large-menu">
+            <li><a href="./cabinet.html">Кабінет</a></li>
+            <li><a href="./realtors.html">Рієлтори</a></li>
+            <li><a href="./map.html" target="_blank">Мапа</a>
+             </li>
+            <li><a href="./contacts.html">Контакти</a></li>
+          </ul>
+        </div>
+        <div class="cabinet-container">
+          <div class="user-name" id="user"></div>
+          <button type="submit" class="car-button add-car" id="add-car-button">+ Добавити Оголошення</button>
+        </div>
+      </nav>
+   
+  </header>
+  <main class="contacts-main">
+    <div class="container">
+      <h1 class="contacts-title">Зв'яжіться з нами</h1>
+  
+      <img src="images/user-placeholder.jpg" alt="User Avatar" class="user-avatar">
+
+      <div class="contacts-grid">
+        <div class="contact-info">
+          <h2>Контактна інформація</h2>
+          <p><strong>Телефон:</strong> <a href="tel:+380971234567">+38 (096) 944 74 05</a></p>
+          <p><strong>Email:</strong> <a href="mailto:support@sun.com">support@sun.com</a></p>
+          <p><strong>Адреса офісу:</strong><br>
+            вул. Височана, 18/33<br>
+            Івано-Франківськ, Україна
+          </p>
+        </div>
+  
+        <div class="contact-form">
+          <h2>Напишіть нам</h2>
+          <form id="contactForm">
+            <input type="text" name="name" placeholder="Ваше ім'я" required>
+            <input type="email" name="email" placeholder="Ваш Email" required>
+            <textarea name="message" rows="5" placeholder="Ваше повідомлення" required></textarea>
+            <button type="submit">Надіслати</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./src/profile.js"></script>
+</body>
+</html>  

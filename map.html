@@ -4,51 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Карта розташування</title>
+  <link rel="icon" href="./resources/SUN.png" type="image/png" />
   <link rel="stylesheet" href="./styles/main.css" />
   <link rel="stylesheet" href="./styles/navbar.css" />
   <link rel="stylesheet" href="./styles/footer.css" />
 </head>
 <body>
-    <header>
-        <nav>
-          <div class="burger-logo-container">
-            <div class="menu-icon" id="menu-icon">☰</div>
-            <div class="logo-container">
-                <a href="./index.html">
-                  <img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" />
-                </a>
-              </div>
-              
-          </div>
-          <div class="large-only">
-            <ul id="large-menu">
-              <li><span class="fa fa-user"></span>&nbsp; <a href="#">About Us</a></li>
-              <li><span class="fa fa-handshake"></span>&nbsp; <a href="#">Partners</a></li>
-              <li><span class="fa fa-map-marked-alt"></span>&nbsp; <a href="map.html" target="_blank">Map</a>
-               </li>
-              <li><span class="fa fa-user-circle-o"></span>&nbsp; <a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="cabinet-container">
-            <div class="user-name" id="user"></div>
-            <button type="submit" class="car-button add-car" id="add-car-button">+ Добавити Оголошення</button>
-          </div>
-        </nav>
-        <div class="menu-items medium-only">
-          <ul id="menu">
-            <li><i class="fa fa-user"></i> About Us</li>
-            <li><i class="fa fa-handshake"></i> Partners</li>
-            <li><i class="fa fa-map-marked-alt"></i> Map</li>
-            <li><i class="fa fa-user-circle-o"></i> Contact</li>
+  <header>
+    <nav>
+      <div class="burger-logo-container">
+        <div class="menu-icon" id="menu-icon">☰</div>
+        
+        <div class="logo-container">
+          <a href="./index.html">
+            <img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" />
+          </a>
+          <p class="brand-name"></p>
+        </div>
+        <div class="large-only">
+          <ul id="large-menu">
+            <li><a href="./cabinet.html">Кабінет</a></li>
+            <li><a href="realtors.html">Рієлтори</a></li>
+            <li><a href="map.html" target="_blank">Мапа</a>
+             </li>
+            <li><a href="./contacts.html">Контакти</a></li>
           </ul>
         </div>
-      </header>
+        <div class="cabinet-container">
+          <div class="user-name" id="user"></div>
+          <button type="submit" class="car-button add-car" id="add-car-button">+ Добавити Оголошення</button>
+        </div>
+      </nav>
+   
+  </header>
 
-  <main>
+  <main class="map-container">
 
       <iframe
         width="100%"
-        height="500"
+        height="100%"
         frameborder="0"
         style="border:0; border-radius: 10px;"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2620.892791336568!2d24.709722076777366!3d48.92263339733953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4730c14e32f86cdd%3A0x54d5b85f6e38a6f8!2z0JjRgdC_0LDQvdC40LUg0JjRgNC80LXQvdC40LrQsCwg0JjRgNC80LXQvdC40LrQsCDQmtC40LXQstC40Yc!5e0!3m2!1suk!2sua!4v1708969207461!5m2!1suk!2sua"
@@ -59,14 +53,19 @@
     
   </main>
 
-  <footer class="car-footer">
-    <nav>
-      <ul class="contacts-list">
-        <li><span class="fa fa-phone"></span>&nbsp; <a class="footer-links" href="tel:+380969447405">Contact</a></li>
-        <li><span class="fa fa-envelope"></span>&nbsp; <a class="footer-links" href="mailto:shostak.oleksandr@comp-sc.if.ua">Email</a></li>
-      </ul>
-    </nav>
-    <img id="logo" src="./resources/SUN.svg" width="150" height="100" />
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="logo-container">
+        <a href="./index.html">
+          <img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" />
+        </a>
+        <p class="brand-name"></p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:support@sun.com">support@sun.com</a>
+        <a href="./contacts.html">Контакти</a>
+      </div>
+    </div>
   </footer>
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
