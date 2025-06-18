@@ -1,175 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Search</title>
-    <link rel="icon" href="./resources/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="./resources/SUN.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/main.css" />
-    <link rel="stylesheet" href="./styles/navbar.css" />
-    <link rel="stylesheet" href="./styles/footer.css" />
-    <link rel="stylesheet" href="./styles/modal.css" />
-    <link rel="stylesheet" href="./styles/car.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Search</title>
 
+  <link rel="icon" href="./resources/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="./resources/SUN.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="burger-logo-container">
-          <div class="menu-icon" id="menu-icon">☰</div>
-          
-          <div class="logo-container">
-            <a href="./index.html">
-              <img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" />
-            </a>
-            <p class="brand-name"></p>
-          </div>
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/navbar.css" />
+  <link rel="stylesheet" href="./styles/footer.css" />
+  <link rel="stylesheet" href="./styles/modal.css" />
+  <link rel="stylesheet" href="./styles/car.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="burger-logo-container">
+        <div class="menu-icon" id="menu-icon">☰</div>
+
+        <div class="logo-container">
+          <a href="./index.html">
+            <img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" />
+          </a>
+          <p class="brand-name"></p>
         </div>
-        
-        <div class="large-only">
-          <ul id="large-menu">
-            <li><a href="./cabinet.html">Кабінет</a></li>
-            <li><a href="./realtors.html">Рієлтори</a></li>
-            <li><a href="./map.html" target="_blank">Мапа</a>
-             </li>
-            <li><a href="./contacts.html">Контакти</a></li>
-          </ul>
-        </div>
-        <div class="cabinet-container">
-          <div class="user-name" id="user"></div>
-          <button type="submit" class="car-button add-car" id="add-car-button">+ Добавити Оголошення</button>
-        </div>
-      </nav>
-      
-    </header>
-    <form class="js-form car-search">
-      <div class="car-group">
-        <select name="make" class="car-select" id="makes-select">
-          <option  selected>Тип житла</option>
-          
-        </select>
-        <select name="model" class="car-select" id="models-select">
-          <option  selected>Локація</option>
-         
-        </select>
       </div>
+
+      <div class="large-only">
+        <ul id="large-menu">
+          <li><a href="./cabinet.html">Кабінет</a></li>
+          <li><a href="./realtors.html">Рієлтори</a></li>
+          <li><a href="./map.html" target="_blank">Мапа</a></li>
+          <li><a href="./contacts.html">Контакти</a></li>
+        </ul>
+      </div>
+
+      <div class="cabinet-container">
+        <div class="user-name" id="user"></div>
+        <button type="button" class="car-button add-car" id="add-car-button">+ Добавити Оголошення</button>
+      </div>
+    </nav>
+  </header>
+
+  <form class="js-form car-search">
+    <div class="car-group">
+      <select name="make" class="car-select" id="makes-select">
+        <option selected>Тип житла</option>
+      </select>
+      <select name="model" class="car-select" id="models-select">
+        <option selected>Локація</option>
+      </select>
+    </div>
+    <div class="car-group">
+      <input type="text" name="mileage" class="car-input" placeholder="Ціна" id="mileage" />
+      <input type="text" name="engine-volume" class="car-input" placeholder="Поверх" id="floor" />
+    </div>
+    <div class="car-group">
+      <select name="offer_type" class="car-select" id="offer-type-select">
+        <option>Тип угоди</option>
+        <option>Продаж</option>
+        <option>Оренда</option>
+      </select>
+    </div>
+    <button type="submit" class="house-search">Пошук</button>
+  </form>
+
+  <div class="image-container">
+    <h2 class="sun-text">SUN COMPANY</h2>
+    <img class="sun-img" src="./resources/Asset 1house_img.png" alt="Ваш будинок мрії">
+  </div>
+
+  <ul class="js-list car-list"></ul>
+
+  <!-- Додати оголошення -->
+  <div id="add-car-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" id="closeAddModal">&times;</span>
+
+      <form class="js-form add-car-form">
+        <h2>Добавити Оголошення</h2>
+
         <div class="car-group">
-          <input type="text" name="mileage" class="car-input" placeholder="Ціна" id="mileage"/>
-          <input type="text" name="engine-volume" class="car-input" placeholder="Поверх" id="floor"/>
-        </div>
-        <div class="car-group">
-          <select name="offer_type" class="car-select" id="offer-type-select">
-            <option>Тип угоди</option>
-            <option>Продаж</option>
-            <option>Оренда</option>
+          <select name="options" class="car-select" id="makes-select-add">
+            <!-- Опції додаються з JS -->
+          </select>
+          <select name="options" class="car-select" id="models-select-add">
+            <!-- Опції додаються з JS -->
           </select>
         </div>
 
-        <button type="submit" class="house-search">Пошук</button>
-      </div>
-    </form>
+        <div class="car-group">
+          <input type="text" name="price" class="car-input" placeholder="Ціна" id="price" />
+          <input type="text" name="distance" class="car-input" placeholder="Відстань від центру" id="engine_volume" />
+        </div>
 
-    <div class="image-container">
-      <h2 class="sun-text">SUN COMPANY</h2>
-      <img class="sun-img" src="./resources/Asset 1house_img.png" alt="Ваш будинок мрії">
+        <div class="car-group">
+          <select name="options" class="car-select" id="fuel-types-select">
+            <!-- Опції додаються з JS -->
+          </select>
+        </div>
+
+        <button type="submit" class="car-button">Добавити</button>
+      </form>
     </div>
-    
-
-
-
-    <ul class="js-list car-list"></ul>
- <!-- Додали id для style="display: none;  -->
-<div id="add-car-modal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <!-- Додали id для хрестика -->
-    <span class="close" id="closeAddModal">&times;</span>
-
-    <form class="js-form add-car-form">
-      <h2>Добавити Оголошення</h2>
-      
-      <div class="car-group">
-        <select name="options" class="car-select" id="makes-select">
-          <!-- Опції додаються з JS -->
-        </select>
-        <select name="options" class="car-select" id="models-select">
-          <!-- Опції додаються з JS -->
-        </select>
-      </div>
-
-      <div class="car-group">
-        <input type="text" name="price" class="car-input" placeholder="Ціна" id="mileage"/>
-        <input type="text" name="distance" class="car-input" placeholder="Відстань від центру" id="engine_volume"/>
-      </div>
-
-      <div class="car-group">
-        <select name="options" class="car-select" id="fuel-types-select">
-          <!-- Опції додаються з JS -->
-        </select>
-      </div>
-
-      <button type="submit" class="car-button">Добавити</button>
-    </form>
   </div>
-</div>
 
-    
-    <div id="car-list" class="car-container"></div>
+  <div id="car-list" class="car-container"></div>
 
   <footer class="footer">
-  <div class="footer-container">
-    <div class="logo-container">
-      <a href="./index.html">
-        <img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" />
-      </a>
-      <p class="brand-name"></p>
+    <div class="footer-container">
+      <div class="logo-container">
+        <a href="./index.html">
+          <img src="./resources/SUN.svg" alt="SUN logo" width="150" height="100" />
+        </a>
+        <p class="brand-name"></p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:support@sun.com">support@sun.com</a>
+        <a href="./contacts.html">Контакти</a>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="mailto:support@sun.com">support@sun.com</a>
-      <a href="./contacts.html">Контакти</a>
+  </footer>
+
+  <!-- LOGIN -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeLogin">&times;</span>
+      <h2 style="text-align: center;">Вхід</h2>
+      <p id="login-message" style="color:red; text-align:center; margin-bottom: 10px;"></p>
+      <form id="login-form" class="welcome-form">
+        <input type="text" name="username" placeholder="Ім’я користувача" required />
+        <input type="password" name="password" placeholder="Пароль" required />
+        <button type="submit" class="car-button">Увійти</button>
+      </form>
+      <p style="text-align: center;">Ще не маєте акаунта? <a href="#" id="switchToRegister">Зареєструватись</a></p>
     </div>
   </div>
-</footer>
 
-<div id="registration-modal" class="modal">
-  <div class="modal-content">
-    <span class="close" id="closeModal">&times;</span>
-    <h2 style="text-align: center;">Реєстрація</h2>
-    <form id="register-form" class="welcome-form">
-      <input type="text" name="username" placeholder="Ім’я користувача" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="text" name="phoneNumber" placeholder="Номер телефону" required />
-      <input type="password" name="password" placeholder="Пароль" required />
-      <select name="typeUser" required>
-        <option value="" disabled selected>Оберіть тип користувача</option>
-        <option value="CUSTOMER">Клієнт</option>
-        <option value="OWNER">Власник</option>
-        <option value="AGENT">Агент</option>
-      </select>
-      <button type="submit" class="car-button">Зареєструватись</button>
-    </form>
+  <!-- REGISTRATION -->
+  <div id="registration-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2 style="text-align: center;">Реєстрація</h2>
+      <form id="register-form" class="welcome-form">
+        <input type="text" name="username" placeholder="Ім’я користувача" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="phoneNumber" placeholder="Номер телефону" required />
+        <input type="password" name="password" placeholder="Пароль" required />
+        <select name="typeUser" required>
+          <option value="" disabled selected>Оберіть тип користувача</option>
+          <option value="CUSTOMER">Клієнт</option>
+          <option value="OWNER">Власник</option>
+          <option value="AGENT">Агент</option>
+        </select>
+        <button type="submit" class="car-button">Зареєструватись</button>
+      </form>
+      <p style="text-align: center;">
+        Вже маєте акаунт?
+        <a href="#" id="switchToLogin">Увійти</a>
+      </p>
+      
+    </div>
   </div>
-</div>
 
-  </div>
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-    <script src="./03-forms.html"></script>
-    <script src="./src/modal.js"></script>
-    <script src="./src/index.js"></script>
-    <script src="./src/details.js"></script>
-
- 
-
- 
-  
-
-  </body>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script src="./src/index.js"></script>
+  <script src="./src/details.js"></script>
+  <script src="./src/user/register.js"></script>
+  <script src="./src/user/login.js"></script>
+  <script src="./src/cabinet.js"></script>
+</body>
 </html>

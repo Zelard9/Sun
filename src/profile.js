@@ -1,5 +1,5 @@
-fetch('http://localhost:8080/api/v1/auth/register', {
-    method: 'POST',
+/*fetch('http://localhost:8080/api/v1/auth/register', {
+    method: 'GET',
     headers: {
       'Authorization': 'Bearer ' + localStorage.getItem('token'),
       'Content-Type': 'application/json'
@@ -34,4 +34,4 @@ fetch('http://localhost:8080/api/v1/auth/register', {
     .catch(err => {
       console.error('Помилка при отриманні даних користувача:', err);
     });
-  
+  */
