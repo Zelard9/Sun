@@ -1,139 +1,377 @@
-let cars = [];
-let makes = [];
-let models = [];
-let conditions = [];
+// /*let cars = [];
+// let makes = [];
+// let models = [];
+// let conditions = [];
 
-document.addEventListener('DOMContentLoaded', async () => {
-  console.log("📦 DOM повністю завантажено");
+// document.addEventListener('DOMContentLoaded', async () => {
+//   console.log("📦 DOM повністю завантажено");
 
-  const container = document.querySelector(".js-list");
-  container.innerHTML = `<div class="loading">Завантаження...</div>`;
+//   const container = document.querySelector(".js-list");
+//   container.innerHTML = `<div class="loading">Завантаження...</div>`;
 
-  try {
-    const response = await fetch('./response.json');
-    if (!response.ok) throw new Error("❌ Неможливо завантажити response.json");
+//   try {
+//     const response = await fetch('./response.json');
+//     if (!response.ok) throw new Error("❌ Неможливо завантажити response.json");
 
-    const response_json = await response.json();
-    cars = response_json.cars || [];
+//     const response_json = await response.json();
+//     cars = response_json.cars || [];
 
-    container.innerHTML = createMarkup(cars);
+//     container.innerHTML = createMarkup(cars);
 
-    makes = [...new Set(cars.map(c => c.car))];
-    models = [...new Set(cars.map(c => c.type))];
-    conditions = [...new Set(cars.map(c => c.condition))];
+//     makes = [...new Set(cars.map(c => c.car))];
+//     models = [...new Set(cars.map(c => c.type))];
+//     conditions = [...new Set(cars.map(c => c.condition))];
 
-    populateSelect('makes-select', makes);
-    populateSelect('models-select', models);
-    populateSelect('condition-select', conditions);
+//     populateSelect('makes-select', makes);
+//     populateSelect('models-select', models);
+//     populateSelect('condition-select', conditions);
 
-    populateSelect('makes-select-add', makes);
-    populateSelect('models-select-add', models);
-    populateSelect('fuel-types-select', conditions);
+//     populateSelect('makes-select-add', makes);
+//     populateSelect('models-select-add', models);
+//     populateSelect('fuel-types-select', conditions);
 
-  } catch (err) {
-    console.error("🚨 Помилка при завантаженні оголошень:", err);
-    container.innerHTML = `<div class="error">Не вдалося завантажити дані</div>`;
-  }
+//   } catch (err) {
+//     console.error("🚨 Помилка при завантаженні оголошень:", err);
+//     container.innerHTML = `<div class="error">Не вдалося завантажити дані</div>`;
+//   }
 
-  const searchForm = document.querySelector(".car-search");
-  if (searchForm) {
-    console.log("🔍 Пошук активовано");
-    searchForm.addEventListener("submit", handleSearch);
-  }
+//   const searchForm = document.querySelector(".car-search");
+//   if (searchForm) {
+//     console.log("🔍 Пошук активовано");
+//     searchForm.addEventListener("submit", handleSearch);
+//   }
 
-  const welcomeForm = document.querySelector("#login-form");
-  if (welcomeForm) {
-    console.log("👤 Форма входу активна");
-    welcomeForm.addEventListener("submit", handleWelcome);
-  }
+//   const welcomeForm = document.querySelector("#login-form");
+//   if (welcomeForm) {
+//     console.log("👤 Форма входу активна");
+//     welcomeForm.addEventListener("submit", handleWelcome);
+//   }
 
-  const menuIcon = document.getElementById('menu-icon');
-  const menu = document.getElementById('large-menu');
-  if (menuIcon && menu) {
-    menuIcon.addEventListener('click', () => {
-      menu.classList.toggle('show');
-      menu.classList.toggle('hide');
-    });
-  }
+//   const menuIcon = document.getElementById('menu-icon');
+//   const menu = document.getElementById('large-menu');
+//   if (menuIcon && menu) {
+//     menuIcon.addEventListener('click', () => {
+//       menu.classList.toggle('show');
+//       menu.classList.toggle('hide');
+//     });
+//   }
 
-  if (sessionStorage.getItem("sessionExpired")) {
-    const loginMessage = document.getElementById("login-message");
-    if (loginMessage) loginMessage.textContent = "Сесію завершено. Увійдіть повторно.";
-    sessionStorage.removeItem("sessionExpired");
+//   // 🔐 Перевірка токена
+//   const token = localStorage.getItem("accessToken");
+//   const cabinetLink = document.querySelector('a[href="./cabinet.html"]');
+//   const realtorsLink = document.querySelector('a[href="./realtors.html"]');
 
-    const loginModal = document.getElementById("login-modal");
-    if (loginModal) loginModal.style.display = "flex";
-  }
-});
+//   if (cabinetLink && realtorsLink) {
+//     if (!token) {
+//       console.log("⛔ Неавторизований — блокуємо переходи");
+//       cabinetLink.removeAttribute("href");
+//       realtorsLink.removeAttribute("href");
 
-function createMarkup(arr) {
-  return arr.map(item => `
-    <li class="car-card" data-id="${item.id}">
-      <a href="car-details.html?id=${item.id}">
-        <img src="${item.img}" alt="${item.car} — ${item.type}" class="car-image">
-        <h2 class="car-title">${item.car}</h2>
-        <h3 class="car-type">${item.type}</h3>
-        <h3><i class="fas fa-bed"></i> Кімнат: ${item.rooms}</h3>
-        <h3><i class="fas fa-ruler-combined"></i> Площа: ${item.area} м²</h3>
-        <h3><i class="fas fa-building"></i> Поверх: ${item.floor}</h3>
-        <h3><i class="fas fa-tools"></i> Стан: ${item.condition}</h3>
-        <h3><i class="fas fa-file-contract"></i> Тип угоди: ${item.offer_type}</h3>
-        <span class="car-price">${item.price}$</span>
-      </a>
-    </li>
-  `).join("");
-}
+//       [cabinetLink, realtorsLink].forEach(link => {
+//         link.addEventListener("click", (e) => {
+//           e.preventDefault();
+//           sessionStorage.setItem("showModal", "login");
+//           window.location.reload();
+//         });
+//       });
+//     } else {
+//       // Перевірка валідності токена
+//       fetch("http://localhost:8080/api/v1/auth/profile", {
+//         headers: {
+//           "Authorization": "Bearer " + token,
+//           "Content-Type": "application/json"
+//         }
+//       })
+//       .then(res => {
+//         if (!res.ok) throw new Error("❌ Недійсний токен");
+//         console.log("✅ Токен валідний");
+//       })
+//       .catch(err => {
+//         console.warn(err.message);
+//         localStorage.removeItem("accessToken");
+//         sessionStorage.setItem("showModal", "login");
+//         window.location.reload();
+//       });
+//     }
+//   }
 
-function populateSelect(selectId, options) {
-  const select = document.getElementById(selectId);
-  if (!select) return;
+//   if (sessionStorage.getItem("showModal") === "login") {
+//     const loginModal = document.getElementById("login-modal");
+//     if (loginModal) loginModal.style.display = "flex";
 
-  select.innerHTML = '';
-  select.appendChild(new Option("-Вибір-", ""));
+//     const loginMessage = document.getElementById("login-message");
+//     if (loginMessage) loginMessage.textContent = "⛔ Для доступу спочатку увійдіть в акаунт.";
 
-  options.forEach(option => {
-    select.appendChild(new Option(option));
-  });
-}
+//     sessionStorage.removeItem("showModal");
+//   }
 
-function handleSearch(event) {
-  event.preventDefault();
-  console.log("🔎 Відправка пошуку");
+//   if (sessionStorage.getItem("sessionExpired")) {
+//     const loginMessage = document.getElementById("login-message");
+//     if (loginMessage) loginMessage.textContent = "Сесію завершено. Увійдіть повторно.";
+//     sessionStorage.removeItem("sessionExpired");
 
-  const elements = event.target.elements;
-  const make = elements.make?.value || '';
-  const model = elements.model?.value || '';
-  const maxArea = elements['engine-volume']?.value || '';
-  const maxFloor = elements.floor?.value || '';
-  const condition = elements.condition?.value || '';
-  const offerType = elements.offer_type?.value || '';
+//     const loginModal = document.getElementById("login-modal");
+//     if (loginModal) loginModal.style.display = "flex";
+//   }
+// });
 
-  const result = cars.filter(car => {
-    return (!make || car.car.toLowerCase().includes(make.toLowerCase())) &&
-           (!model || car.type.toLowerCase().includes(model.toLowerCase())) &&
-           (!maxArea || car.area <= parseInt(maxArea)) &&
-           (!maxFloor || car.floor <= parseInt(maxFloor)) &&
-           (!condition || car.condition === condition) &&
-           (!offerType || car.offer_type === offerType);
-  });
+// function createMarkup(arr) {
+//   return arr.map(item => `
+//     <li class="car-card" data-id="${item.id}">
+//       <a href="car-details.html?id=${item.id}">
+//         <img src="${item.img}" alt="${item.car} — ${item.type}" class="car-image">
+//         <h2 class="car-title">${item.car}</h2>
+//         <h3 class="car-type">${item.type}</h3>
+//         <h3><i class="fas fa-bed"></i> Кімнат: ${item.rooms}</h3>
+//         <h3><i class="fas fa-ruler-combined"></i> Площа: ${item.area} м²</h3>
+//         <h3><i class="fas fa-building"></i> Поверх: ${item.floor}</h3>
+//         <h3><i class="fas fa-tools"></i> Стан: ${item.condition}</h3>
+//         <h3><i class="fas fa-file-contract"></i> Тип угоди: ${item.offer_type}</h3>
+//         <span class="car-price">${item.price}$</span>
+//       </a>
+//     </li>
+//   `).join("");
+// }
 
-  const container = document.querySelector(".js-list");
-  container.innerHTML = result.length === 0
-    ? `<div>Нічого не знайдено :(</div>`
-    : createMarkup(result);
-}
+// function populateSelect(selectId, options) {
+//   const select = document.getElementById(selectId);
+//   if (!select) return;
 
-function handleWelcome(event) {
-  event.preventDefault();
-  console.log("🔐 Вхід виконано");
+//   select.innerHTML = '';
+//   select.appendChild(new Option("-Вибір-", ""));
 
-  const name = event.target.username?.value || "Гість";
-  const user = document.getElementById('user');
-  if (user) {
-    user.textContent = `Ви ввійшли як: ${name}`;
-  }
+//   options.forEach(option => {
+//     select.appendChild(new Option(option));
+//   });
+// }
 
-  const modal = document.getElementById("login-modal");
-  if (modal) modal.style.display = "none";
-}
+// function handleSearch(event) {
+//   event.preventDefault();
+//   console.log("🔎 Відправка пошуку");
 
+//   const elements = event.target.elements;
+//   const make = elements.make?.value || '';
+//   const model = elements.model?.value || '';
+//   const maxArea = elements.area?.value || '';
+//   const maxFloor = elements.floor?.value || '';
+//   const condition = elements.condition?.value || '';
+//   const offerType = elements.offer_type?.value || '';
+
+//   const result = cars.filter(car => {
+//     return (!make || car.car.toLowerCase().includes(make.toLowerCase())) &&
+//            (!model || car.type.toLowerCase().includes(model.toLowerCase())) &&
+//            (!maxArea || car.area <= parseInt(maxArea)) &&
+//            (!maxFloor || car.floor <= parseInt(maxFloor)) &&
+//            (!condition || car.condition === condition) &&
+//            (!offerType || car.offer_type === offerType);
+//   });
+
+//   const container = document.querySelector(".js-list");
+//   container.innerHTML = result.length === 0
+//     ? `<div class="no-results">Нічого не знайдено за заданими параметрами 😢</div>`
+//     : createMarkup(result);
+// }
+
+// function handleWelcome(event) {
+//   event.preventDefault();
+//   console.log("🔐 Вхід виконано");
+
+//   const name = event.target.username?.value || "Гість";
+//   const user = document.getElementById('user');
+//   if (user) {
+//     user.textContent = `Ви ввійшли як: ${name}`;
+//   }
+
+//   const modal = document.getElementById("login-modal");
+//   if (modal) modal.style.display = "none";
+// }
+// */
+// let cars = [];
+// let makes = [];
+// let models = [];
+// let conditions = [];
+
+// document.addEventListener('DOMContentLoaded', async () => {
+//   console.log("📦 DOM повністю завантажено");
+
+//   const container = document.querySelector(".js-list");
+//   container.innerHTML = `<div class="loading">Завантаження...</div>`;
+
+//   try {
+//     const response = await fetch('./response.json');
+//     if (!response.ok) throw new Error("❌ Неможливо завантажити response.json");
+
+//     const response_json = await response.json();
+//     cars = response_json.cars || [];
+
+//     container.innerHTML = createMarkup(cars);
+
+//     makes = [...new Set(cars.map(c => c.car))];
+//     models = [...new Set(cars.map(c => c.type))];
+//     conditions = [...new Set(cars.map(c => c.condition))];
+
+//     populateSelect('makes-select', makes);
+//     populateSelect('models-select', models);
+//     populateSelect('condition-select', conditions);
+
+//     populateSelect('makes-select-add', makes);
+//     populateSelect('models-select-add', models);
+//     populateSelect('fuel-types-select', conditions);
+
+//   } catch (err) {
+//     console.error("🚨 Помилка при завантаженні оголошень:", err);
+//     container.innerHTML = `<div class="error">Не вдалося завантажити дані</div>`;
+//   }
+
+//   const searchForm = document.querySelector(".car-search");
+//   if (searchForm) {
+//     console.log("🔍 Пошук активовано");
+//     searchForm.addEventListener("submit", handleSearch);
+//   }
+
+//   const welcomeForm = document.querySelector("#login-form");
+//   if (welcomeForm) {
+//     console.log("👤 Форма входу активна");
+//     welcomeForm.addEventListener("submit", handleWelcome);
+//   }
+
+//   const menuIcon = document.getElementById('menu-icon');
+//   const menu = document.getElementById('large-menu');
+//   if (menuIcon && menu) {
+//     menuIcon.addEventListener('click', () => {
+//       menu.classList.toggle('show');
+//       menu.classList.toggle('hide');
+//     });
+//   }
+
+//   // 🔐 Перевірка токена
+//   const token = localStorage.getItem("accessToken");
+//   const cabinetLink = document.querySelector('a[href="./cabinet.html"]');
+//   const realtorsLink = document.querySelector('a[href="./realtors.html"]');
+
+//   if (cabinetLink && realtorsLink) {
+//     if (!token) {
+//       console.log("⛔ Неавторизований — блокуємо переходи");
+//       cabinetLink.removeAttribute("href");
+//       realtorsLink.removeAttribute("href");
+
+//       [cabinetLink, realtorsLink].forEach(link => {
+//         link.addEventListener("click", (e) => {
+//           e.preventDefault();
+//           sessionStorage.setItem("showModal", "login");
+//           const loginModal = document.getElementById("login-modal");
+//           if (loginModal) loginModal.style.display = "flex";
+//         });
+//       });
+//     } else {
+//       // Перевірка валідності токена
+//       fetch("http://localhost:8080/api/v1/auth/profile", {
+//         headers: {
+//           "Authorization": "Bearer " + token,
+//           "Content-Type": "application/json"
+//         }
+//       })
+//       .then(res => {
+//         if (!res.ok) throw new Error("❌ Недійсний токен");
+//         console.log("✅ Токен валідний");
+//       })
+//       .catch(err => {
+//         console.warn(err.message);
+//         localStorage.removeItem("accessToken");
+//         sessionStorage.setItem("showModal", "login");
+//         const loginModal = document.getElementById("login-modal");
+//         if (loginModal) loginModal.style.display = "flex";
+//       });
+//     }
+//   }
+
+//   if (sessionStorage.getItem("showModal") === "login") {
+//     const loginModal = document.getElementById("login-modal");
+//     if (loginModal) loginModal.style.display = "flex";
+
+//     const loginMessage = document.getElementById("login-message");
+//     if (loginMessage) loginMessage.textContent = "⛔ Для доступу спочатку увійдіть в акаунт.";
+
+//     sessionStorage.removeItem("showModal");
+//   }
+
+//   if (sessionStorage.getItem("sessionExpired")) {
+//     const loginMessage = document.getElementById("login-message");
+//     if (loginMessage) loginMessage.textContent = "Сесію завершено. Увійдіть повторно.";
+//     sessionStorage.removeItem("sessionExpired");
+
+//     const loginModal = document.getElementById("login-modal");
+//     if (loginModal) loginModal.style.display = "flex";
+//   }
+// });
+
+// function createMarkup(arr) {
+//   return arr.map(item => `
+//     <li class="car-card" data-id="${item.id}">
+//       <a href="car-details.html?id=${item.id}">
+//         <img src="${item.img}" alt="${item.car} — ${item.type}" class="car-image">
+//         <h2 class="car-title">${item.car}</h2>
+//         <h3 class="car-type">${item.type}</h3>
+//         <h3><i class="fas fa-bed"></i> Кімнат: ${item.rooms}</h3>
+//         <h3><i class="fas fa-ruler-combined"></i> Площа: ${item.area} м²</h3>
+//         <h3><i class="fas fa-building"></i> Поверх: ${item.floor}</h3>
+//         <h3><i class="fas fa-tools"></i> Стан: ${item.condition}</h3>
+//         <h3><i class="fas fa-file-contract"></i> Тип угоди: ${item.offer_type}</h3>
+//         <span class="car-price">${item.price}$</span>
+//       </a>
+//     </li>
+//   `).join("");
+// }
+
+// function populateSelect(selectId, options) {
+//   const select = document.getElementById(selectId);
+//   if (!select) return;
+
+//   select.innerHTML = '';
+//   select.appendChild(new Option("-Вибір-", ""));
+
+//   options.forEach(option => {
+//     select.appendChild(new Option(option));
+//   });
+// }
+
+// function handleSearch(event) {
+//   event.preventDefault();
+//   console.log("🔎 Відправка пошуку");
+
+//   const elements = event.target.elements;
+//   const make = elements.make?.value || '';
+//   const model = elements.model?.value || '';
+//   const maxArea = elements.area?.value || '';
+//   const maxFloor = elements.floor?.value || '';
+//   const condition = elements.condition?.value || '';
+//   const offerType = elements.offer_type?.value || '';
+
+//   const result = cars.filter(car => {
+//     return (!make || car.car.toLowerCase().includes(make.toLowerCase())) &&
+//            (!model || car.type.toLowerCase().includes(model.toLowerCase())) &&
+//            (!maxArea || car.area <= parseInt(maxArea)) &&
+//            (!maxFloor || car.floor <= parseInt(maxFloor)) &&
+//            (!condition || car.condition === condition) &&
+//            (!offerType || car.offer_type === offerType);
+//   });
+
+//   const container = document.querySelector(".js-list");
+//   container.innerHTML = result.length === 0
+//     ? `<div class="no-results">Нічого не знайдено за заданими параметрами 😢</div>`
+//     : createMarkup(result);
+// }
+
+// function handleWelcome(event) {
+//   event.preventDefault();
+//   console.log("🔐 Вхід виконано");
+
+//   const name = event.target.username?.value || "Гість";
+//   const user = document.getElementById('user');
+//   if (user) {
+//     user.textContent = `Ви ввійшли як: ${name}`;
+//   }
+
+//   const modal = document.getElementById("login-modal");
+//   if (modal) modal.style.display = "none";
+// }
